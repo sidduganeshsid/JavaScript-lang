@@ -1,0 +1,30 @@
+class User{
+    constructor(name,email) {
+        this.name = name;
+        this.email = email;
+    }
+    #courseList = []
+
+
+    getInfo(){
+        return {name: this.name, email: this.email}
+    }
+
+    enrollCourses(name){
+        this.#courseList.push(name)
+    }
+
+    getCourseList()
+    {
+        return this.#courseList;
+    }
+
+}
+
+module.exports = User;
+
+var aku = new User("aakash","aku@lco.dev")
+console.log(aku.getInfo());
+aku.enrollCourses("core JavaScript");
+console.log(aku.getCourseList());
+console.log(aku.courseList);
